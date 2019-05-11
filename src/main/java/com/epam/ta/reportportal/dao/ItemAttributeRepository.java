@@ -18,6 +18,7 @@ package com.epam.ta.reportportal.dao;
 
 import com.epam.ta.reportportal.entity.ItemAttribute;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -26,4 +27,8 @@ import java.util.Optional;
 public interface ItemAttributeRepository extends ReportPortalRepository<ItemAttribute, Long>, ItemAttributeRepositoryCustom {
 
 	Optional<ItemAttribute> findByLaunchIdAndKeyAndSystem(Long launchId, String key, boolean isSystem);
+
+	List<ItemAttribute> findAllByKeyAndValueAndSystemAndLaunchIdIn(String key, String value, boolean system, List<Long> launchIds);
+
+	List<ItemAttribute> findAllByKeyAndValueAndSystemAndTestItemIdIn(String key, String value, boolean system, List<Long> launchIds);
 }

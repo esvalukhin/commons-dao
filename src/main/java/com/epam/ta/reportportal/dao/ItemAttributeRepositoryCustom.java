@@ -85,5 +85,7 @@ public interface ItemAttributeRepositoryCustom {
 	 * @param itemAttributes The {@link List} of the {@link ItemAttributePojo}
 	 * @return Number of inserted records
 	 */
-	int saveMultiple(List<ItemAttributePojo> itemAttributes);
+	int saveMultipleForItem(List<ItemAttributePojo> itemAttributes);
+
+	int saveMultipleForLaunch(List<ItemAttributePojo> itemAttributes);
 }
